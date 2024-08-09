@@ -1,0 +1,25 @@
+1 I have faced issue of access deneid  to the cdn url for a long time. SInce then
+ tried multiple way to resolve it by checking the bucket policy and other areas.
+ Through the analyis, i narrowed down the issue target endpoint of the cdn.
+ The CDN was simply targeted on the bucket rather than bucket endpoint. so i changed to regional
+ URL that directs to the website url. But still i had the issue. 
+ Later, i recognized that cdn shoud point to root object that is index.html
+ So i added the "default_root_object = "index.html""
+ Then thigs have got smooth running.
+
+
+2 
+Default Certificate:
+
+AWS CloudFront automatically provides a default SSL/TLS certificate for
+the domain name of the distribution. This certificate is issued by Amazon and
+is used to secure the connection between the client (browser) and CloudFront.
+This default certificate covers the domain name in the format *.cloudfront.net, 
+which is the default domain assigned to your CloudFront distribution (e.g., d111111abcdef8.cloudfront.net).
+
+Custom Domain Names:
+
+If you use a custom domain name (e.g., www.example.com) for your CloudFront 
+distribution, you typically need to associate an SSL/TLS certificate with it.
+You can request a certificate through AWS Certificate Manager (ACM) and 
+associate it with your CloudFront distribution.
