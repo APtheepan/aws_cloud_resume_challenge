@@ -60,7 +60,7 @@ resource "aws_iam_role" "iam_for_lambda" {
 }
 
 */
-
+/*
 data "archive_file" "lambda" {
   type = "zip"
   #source_file = "/home/theepan/aws_cloud_resume_challenge/backend/visitorcount.py"
@@ -68,7 +68,7 @@ data "archive_file" "lambda" {
   source_file = "backend/visitorcount.py"
   output_path = "backend/visitorcount.zip"
 }
-
+*/
 resource "aws_lambda_function_url" "lambda_url" {
   function_name      = aws_lambda_function.visitorcount.function_name
   authorization_type = "NONE"
