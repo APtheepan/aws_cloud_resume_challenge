@@ -82,7 +82,7 @@ resource "aws_lambda_function" "visitorcount" {
   function_name    = "visitorcount"
   role             = aws_iam_role.iam_for_lambda.arn
   handler          = "visitorcount.lambda_handler"
-  source_code_hash = filebase64sha256("backend/visitorcount.zip")
+  source_code_hash = "backend/visitorcount.zip"
   runtime          = "python3.8"
 
 }
