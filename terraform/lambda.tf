@@ -63,8 +63,10 @@ resource "aws_iam_role" "iam_for_lambda" {
 
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "/home/theepan/aws_cloud_resume_challenge/backend/visitorcount.py"
-  output_path = "/home/theepan/aws_cloud_resume_challenge/backend/visitorcount.zip"
+  #source_file = "/home/theepan/aws_cloud_resume_challenge/backend/visitorcount.py"
+  #output_path = "/home/theepan/aws_cloud_resume_challenge/backend/visitorcount.zip"
+  source_file = "backend/visitorcount.py"
+  output_path = "backend/visitorcount.zip"
 }
 
 resource "aws_lambda_function_url" "lambda_url" {
@@ -75,7 +77,8 @@ resource "aws_lambda_function_url" "lambda_url" {
 resource "aws_lambda_function" "visitorcount" {
   # If the file is not in the current working directory you will need to include a
   # path.module in the filename.
-  filename         = "/home/theepan/aws_cloud_resume_challenge/backend/visitorcount.zip"
+  #filename         = "/home/theepan/aws_cloud_resume_challenge/backend/visitorcount.zip"
+  filename         = "backend/visitorcount.zip"
   function_name    = "visitorcount"
   role             = aws_iam_role.iam_for_lambda.arn
   handler          = "visitorcount.lambda_handler"
