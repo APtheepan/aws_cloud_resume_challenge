@@ -10,8 +10,8 @@ resource "aws_cloudfront_origin_access_control" "mywebsite_oac" {
 }
 
 resource "aws_cloudfront_distribution" "my_cdn_distribution" {
-  depends_on = [ aws_cloudfront_origin_access_control.mywebsite_oac, aws_s3_bucket.my_s3bucket, aws_acm_certificate.cert ]
-  
+  depends_on = [aws_cloudfront_origin_access_control.mywebsite_oac, aws_s3_bucket.my_s3bucket, aws_acm_certificate.cert]
+
   default_root_object = "index.html"
   origin {
     domain_name              = aws_s3_bucket.my_s3bucket.bucket_regional_domain_name
@@ -20,8 +20,8 @@ resource "aws_cloudfront_distribution" "my_cdn_distribution" {
   }
   viewer_certificate {
     cloudfront_default_certificate = true
-    acm_certificate_arn = aws_acm_certificate.cert.arn
-    ssl_support_method  = "sni-only"
+    acm_certificate_arn            = aws_acm_certificate.cert.arn
+    ssl_support_method             = "sni-only"
 
   }
 
@@ -46,7 +46,7 @@ resource "aws_cloudfront_distribution" "my_cdn_distribution" {
         forward = "none"
       }
     }
-   
+
   }
 
 }

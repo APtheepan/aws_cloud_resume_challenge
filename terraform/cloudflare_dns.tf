@@ -15,7 +15,7 @@ resource "cloudflare_record" "certificate_cname" {
     }
   }
 
-  zone_id = var.zone_id  # Replace with your Cloudflare zone ID
+  zone_id         = var.zone_id # Replace with your Cloudflare zone ID
   allow_overwrite = true
   name            = each.value.name
   value           = each.value.record
@@ -25,13 +25,13 @@ resource "cloudflare_record" "certificate_cname" {
 
 
 resource "cloudflare_record" "website" {
-  depends_on = [ aws_cloudfront_distribution.my_cdn_distribution ]
-  zone_id = var.zone_id  # Replace with your Cloudflare zone ID
-  name    = "@"
-  value   = aws_cloudfront_distribution.my_cdn_distribution.domain_name
-  ttl     = 60
-  type    = "CNAME"
-  
+  depends_on = [aws_cloudfront_distribution.my_cdn_distribution]
+  zone_id    = var.zone_id # Replace with your Cloudflare zone ID
+  name       = "@"
+  value      = aws_cloudfront_distribution.my_cdn_distribution.domain_name
+  ttl        = 60
+  type       = "CNAME"
+
 }
 
 
