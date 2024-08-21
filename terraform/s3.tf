@@ -1,14 +1,7 @@
 
 
-resource "random_string" "random" {
-  length  = 3
-  upper   = false
-  special = false
-}
-
-
 resource "aws_s3_bucket" "my_s3bucket" {
-  bucket        = "teeps-${random_string.random.result}"
+  bucket        = "teepswebucket"
   force_destroy = true
 }
 
@@ -58,7 +51,7 @@ resource "aws_s3_object" "upload_object" {
     # content is displayed correctly. Otherwise the content will be downloaded
   
 }
-*/
+
 
 resource "aws_s3_object" "upload_html" {
 
@@ -83,9 +76,8 @@ resource "aws_s3_object" "upload_css" {
 
 }
 
+*/
 
 output "s3_bucket_id" {
   value = aws_s3_bucket.my_s3bucket.bucket_domain_name
 }
-
-

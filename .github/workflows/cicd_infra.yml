@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'terraform/**'
+      - '.github/workflows/cicd_infra.yml'
+      
 
 jobs:
   terraform:
@@ -39,5 +43,5 @@ jobs:
         id: plan
         run: terraform plan -no-color
 
-      - name: Terraform destroy
-        run: terraform destroy -auto-approve
+      - name: Terraform apply
+        run: terraform apply -auto-approve
