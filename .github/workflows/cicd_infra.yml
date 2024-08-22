@@ -44,5 +44,5 @@ jobs:
         run: terraform plan -no-color
 
       - name: Terraform apply
-        uses: terraform destroy -auto-approve
+        run: terraform destroy -auto-approve 
 
