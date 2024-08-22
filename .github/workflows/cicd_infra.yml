@@ -44,4 +44,5 @@ jobs:
         run: terraform plan -no-color
 
       - name: Terraform apply
-        run: terraform apply -auto-approve
+        uses: hashicorp/terraform-github-actions/destory@v2
+        
