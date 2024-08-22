@@ -1,5 +1,4 @@
 
-
 resource "aws_s3_bucket" "my_s3bucket" {
   bucket        = "teepswebucket"
   force_destroy = true
@@ -32,14 +31,14 @@ resource "aws_s3_bucket_policy" "my_s3bucket_policy" {
             "Sid": "PublicReadGetObject",
             "Effect": "Allow",
             "Principal": "*",
-            "Action": "s3:GetObject",
+            "Action": ["s3:GetObject","s3:PutBucketPolicy"],
             "Resource": "arn:aws:s3:::${aws_s3_bucket.my_s3bucket.bucket}/*"
         }
     ]
   }
 EOF
-
 }
+
 /*
 resource "aws_s3_object" "upload_object" {
     for_each = fileset("/home/theepan/aws_cloud_resume_challenge/frontend", "*")
@@ -52,7 +51,6 @@ resource "aws_s3_object" "upload_object" {
   
 }
 
-
 resource "aws_s3_object" "upload_html" {
 
   bucket        = aws_s3_bucket.my_s3bucket.bucket
@@ -63,7 +61,6 @@ resource "aws_s3_object" "upload_html" {
   # content is displayed correctly. Otherwise the content will be downloaded
 
 }
-
 
 resource "aws_s3_object" "upload_css" {
 
