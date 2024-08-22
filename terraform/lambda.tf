@@ -81,7 +81,7 @@ resource "aws_lambda_function_url" "lambda_url" {
 resource "aws_lambda_function" "visitorcount" {
   # If the file is not in the current working directory you will need to include a
   # path.module in the filename.
-  #filename         = "${path.module}/backend/visitorcount.zip"
+  filename         = "visitorcount.zip"
   #filename         = data.archive_file.lambda.output_path
   function_name    = "visitorcount"
   role             = aws_iam_role.iam_for_lambda.arn
