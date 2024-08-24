@@ -68,11 +68,7 @@ resource "aws_iam_role" "iam_for_lambda" {
 data "archive_file" "lambda" {
   type = "zip"
   output_path = "${path.module}/visitorcount.zip"
-  source {
-    content = "hello"
-    filename = "visitorcount.py"
-  }
-  #source_file = "${path.module}/backend/visitorcount.py"
+  source_file = "/home/theepan/aws_cloud_resume_challenge/backend/visitorcount.py"
   #output_path = "${path.module}/backend/visitorcount.zip"
 }
 
