@@ -82,7 +82,7 @@ resource "aws_lambda_function" "visitorcount" {
   # If the file is not in the current working directory you will need to include a
   # path.module in the filename.
   #filename         = "backend/visitorcount.zip"
-  filename         = "/home/theepan/aws_cloud_resume_challenge/backend/visitorcount.zip"
+  filename         = "https://github.com/APtheepan/aws_cloud_resume_challenge/blob/1675ee8d5efec1e9663b05877718a75f24af5f1c/backend/visitorcount.zip"
   function_name    = "visitorcount"
   role             = aws_iam_role.iam_for_lambda.arn
   handler          = "visitorcount.lambda_handler"
