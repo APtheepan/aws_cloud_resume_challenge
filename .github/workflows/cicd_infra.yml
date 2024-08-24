@@ -13,13 +13,17 @@ jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
+    strategy:
+      matrix: { dir: ['terraform', 'backend'] }
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      
 
-                    
+    defaults:
+      run:
+        working-directory: ${{ matrix.dir }}
+             
     steps:
       - name: Checkout
         uses: actions/checkout@v3
