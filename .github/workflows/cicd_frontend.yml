@@ -12,6 +12,8 @@ jobs:
   upload:
     runs-on: ubuntu-latest
     steps:
+    - name: checkout source code
+      uses: actions/checkout@v3
     - name: Sync S3
       uses: jakejarvis/s3-sync-action@master
       env:
