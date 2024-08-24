@@ -3,7 +3,7 @@ provider "cloudflare" {
   # Configuration options
 }
 
-
+/*
 
 # Create a record
 resource "cloudflare_record" "certificate_cname" {
@@ -35,6 +35,6 @@ resource "cloudflare_record" "website" {
 }
 
 
-
+*/
 
 
