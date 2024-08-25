@@ -14,7 +14,7 @@ resource "aws_s3_bucket_website_configuration" "Cloudresume" {
 resource "aws_s3_bucket_public_access_block" "public_access_block" {
   bucket                  = aws_s3_bucket.my_s3bucket.bucket
   block_public_acls       = false
-  block_public_policy     = false
+  block_public_policy     = true
   ignore_public_acls      = false
   restrict_public_buckets = false
   # This is required to allow the bucket to be used as a static website
