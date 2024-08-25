@@ -4,7 +4,7 @@ provider "cloudflare" {
 }
 
 
-
+/*
 # Create a record
 resource "cloudflare_record" "certificate_cname" {
   for_each = {
@@ -35,6 +35,6 @@ resource "cloudflare_record" "website" {
 }
 
 
-
+*/
 
 
