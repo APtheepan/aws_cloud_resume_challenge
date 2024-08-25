@@ -21,7 +21,7 @@ resource "aws_s3_bucket_public_access_block" "public_access_block" {
 }
 
 
-resource "aws_s3_bucket_policy" "my_s3bucket_policy" {
+resource "aws_s3_bucket_policy" "my_s3bucket_PutBucketPolicy" {
   bucket = aws_s3_bucket.my_s3bucket.bucket
   policy = <<EOF
 {
@@ -31,13 +31,33 @@ resource "aws_s3_bucket_policy" "my_s3bucket_policy" {
             "Sid": "PublicReadGetObject",
             "Effect": "Allow",
             "Principal": "*",
-            "Action": ["s3:PutBucketPolicy","s3:GetObject"],
+            "Action": "s3:PutBucketPolicy",
             "Resource": "arn:aws:s3:::${aws_s3_bucket.my_s3bucket.bucket}/*"
         }
     ]
   }
 EOF
 }
+
+resource "aws_s3_bucket_policy" "my_s3bucket_GetObject" {
+  bucket = aws_s3_bucket.my_s3bucket.bucket
+  policy = <<EOF
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::${aws_s3_bucket.my_s3bucket.bucket}/*"
+        }
+    ]
+  }
+EOF
+}
+
+
 
 /*
 resource "aws_s3_object" "upload_object" {
