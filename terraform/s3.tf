@@ -20,7 +20,7 @@ resource "aws_s3_bucket_public_access_block" "public_access_block" {
   # This is required to allow the bucket to be used as a static website
 }
 
-
+/*
 resource "aws_s3_bucket_policy" "my_s3bucket_PutBucketPolicy" {
   bucket = aws_s3_bucket.my_s3bucket.bucket
   policy = <<EOF
@@ -38,6 +38,7 @@ resource "aws_s3_bucket_policy" "my_s3bucket_PutBucketPolicy" {
   }
 EOF
 }
+*/
 
 resource "aws_s3_bucket_policy" "my_s3bucket_GetObject" {
   bucket = aws_s3_bucket.my_s3bucket.bucket
