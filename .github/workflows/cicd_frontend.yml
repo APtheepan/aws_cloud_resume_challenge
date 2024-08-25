@@ -17,7 +17,7 @@ jobs:
     - name: Sync S3
       uses: jakejarvis/s3-sync-action@master
       env:
-        SOURCE_DIR: '${path.module}/aws_cloud_resume_challenge/frontend'
+        SOURCE_DIR: './frontend'
         AWS_REGION: 'us-east-1'
         AWS_S3_BUCKET: 'teepswebucket'
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

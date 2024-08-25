@@ -11,7 +11,7 @@ on:
 
 jobs:
   deploy_source:
-    name: Deploy lambda function from source
+    name: Deploy lambda function from sources
     runs-on: ubuntu-latest
     steps:
       - name: checkout source code
