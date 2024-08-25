@@ -4,7 +4,7 @@ resource "aws_acm_certificate" "cert" {
  
 
 }
-
+/*
 data "aws_acm_certificate" "cert" {
   depends_on = [aws_acm_certificate.cert]
   domain = "teepstech.com"
