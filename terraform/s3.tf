@@ -10,16 +10,16 @@ resource "aws_s3_bucket_website_configuration" "Cloudresume" {
     suffix = "index.html"
   }
 }
-/*
+
 resource "aws_s3_bucket_public_access_block" "public_access_block" {
   bucket                  = aws_s3_bucket.my_s3bucket.bucket
-  block_public_acls       = false
+  block_public_acls       = true
   block_public_policy     = true
-  ignore_public_acls      = false
-  restrict_public_buckets = false
+  ignore_public_acls      = true
+  restrict_public_buckets = true
   # This is required to allow the bucket to be used as a static website
 }
-*/
+
 
 resource "aws_s3_bucket_policy" "my_s3bucket_PutBucketPolicy" {
   bucket = aws_s3_bucket.my_s3bucket.bucket
