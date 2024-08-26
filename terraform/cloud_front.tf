@@ -1,5 +1,5 @@
 
-
+/*
 
 resource "aws_cloudfront_origin_access_control" "mywebsite_oac" {
   description                       = "Way to send authenticated requests to an Amazon S3 origin"
@@ -59,3 +59,4 @@ output "cloudfront_distribution_domain_name" {
 
 
 
+*/
