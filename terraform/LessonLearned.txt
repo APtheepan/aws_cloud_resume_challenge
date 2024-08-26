@@ -1,4 +1,6 @@
-1 I have faced issue of access deneid  to the cdn url for a long time. SInce then
+Challenge 1
+
+ I have faced issue of access deneid  to the cdn url for a long time. SInce then
  tried multiple way to resolve it by checking the bucket policy and other areas.
  Through the analyis, i narrowed down the issue target endpoint of the cdn.
  The CDN was simply targeted on the bucket rather than bucket endpoint. so i changed to regional
@@ -8,7 +10,7 @@
  Then thigs have got smooth running.
 
 
-2 
+Challenge 2
 Default Certificate:
 
 AWS CloudFront automatically provides a default SSL/TLS certificate for
@@ -23,3 +25,23 @@ If you use a custom domain name (e.g., www.example.com) for your CloudFront
 distribution, you typically need to associate an SSL/TLS certificate with it.
 You can request a certificate through AWS Certificate Manager (ACM) and 
 associate it with your CloudFront distribution.
+
+
+
+Challenge 3
+
+I was facing the issue with lambda function when i automate the lambda function with
+GitHub action. The issue was that filename thrown error that it couldn't find the file.
+I was not sure why this was throwing error. i tried to invoke the file from github repo
+itself but yet it failed. After many attempts in many differnet ways. Finally found out the
+way to upload dummy fuction code in the terraform itself. Later i would be able to update
+the function usign CICD pipeline.
+
+Challenge 4
+
+The challenge was my user can't perform s3:PutBucketPolicy with because public policies
+are blocked by the BlockPublicPolicy block public access setting yet provided with correct set
+of permission and other stuff. After spending quit amount of time finally i was able to
+find a silly mistake in the terraform excution flow.
+There was a dependency on a resorce on other. Then i streamed line the process
+Then got success.
