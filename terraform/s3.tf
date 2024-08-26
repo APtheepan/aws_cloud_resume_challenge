@@ -66,7 +66,7 @@ EOF
 */
 
 resource "aws_s3_bucket_policy" "my_s3bucket_GetObject" {
-  depends_on = [ aws_iam_policy_attachment.vscode_s3_read_write_policy, aws_iam_policy.s3_read_write_policy ]
+  depends_on = [ aws_iam_policy_attachment.vscode_s3_read_write_policy, aws_iam_policy.s3_read_write_policy, aws_s3_bucket_public_access_block.public_access_block]
   bucket = aws_s3_bucket.my_s3bucket.bucket
   policy = <<EOF
 {
