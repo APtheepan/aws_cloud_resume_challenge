@@ -23,7 +23,12 @@ resource "aws_iam_policy" "s3_read_write_policy" {
   })
 
 }
+resource "aws_iam_policy_attachment" "vscode_s3_read_write_policy" {
+  name       = "vscode-s3-read-write-policy"
+  policy_arn = aws_iam_policy.s3_read_write_policy.arn
+  users      = ["vscode"]
 
+}
 resource "aws_s3_bucket_website_configuration" "Cloudresume" {
   bucket = aws_s3_bucket.my_s3bucket.bucket
   index_document {
@@ -61,6 +66,7 @@ EOF
 */
 
 resource "aws_s3_bucket_policy" "my_s3bucket_GetObject" {
+  depends_on = [ aws_iam_policy_attachment.vscode_s3_read_write_policy, aws_iam_policy.s3_read_write_policy ]
   bucket = aws_s3_bucket.my_s3bucket.bucket
   policy = <<EOF
 {
