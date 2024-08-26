@@ -4,6 +4,26 @@ resource "aws_s3_bucket" "my_s3bucket" {
   force_destroy = true
 }
 
+resource "aws_iam_policy" "s3_read_write_policy" {
+  name        = "s3-read-write-access"
+  path        = "/"
+  description = "Allows read and write access to S3 buckets"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "S3:GetObject",
+          "S3:PutObject"
+        ]
+        Resource = "*"
+      },
+    ]
+  })
+
+}
+
 resource "aws_s3_bucket_website_configuration" "Cloudresume" {
   bucket = aws_s3_bucket.my_s3bucket.bucket
   index_document {
