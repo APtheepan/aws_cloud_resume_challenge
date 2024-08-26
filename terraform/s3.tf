@@ -4,31 +4,7 @@ resource "aws_s3_bucket" "my_s3bucket" {
   force_destroy = true
 }
 
-resource "aws_iam_policy" "s3_read_write_policy" {
-  name        = "s3-read-write-access"
-  path        = "/"
-  description = "Allows read and write access to S3 buckets"
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect = "Allow"
-        Action = [
-          "S3:GetObject",
-          "S3:PutObject"
-        ]
-        Resource = "*"
-      },
-    ]
-  })
 
-}
-resource "aws_iam_policy_attachment" "vscode_s3_read_write_policy" {
-  name       = "vscode-s3-read-write-policy"
-  policy_arn = aws_iam_policy.s3_read_write_policy.arn
-  users      = ["vscode"]
-
-}
 resource "aws_s3_bucket_website_configuration" "Cloudresume" {
   bucket = aws_s3_bucket.my_s3bucket.bucket
   index_document {
@@ -66,7 +42,7 @@ EOF
 */
 
 resource "aws_s3_bucket_policy" "my_s3bucket_GetObject" {
-  depends_on = [ aws_iam_policy_attachment.vscode_s3_read_write_policy, aws_iam_policy.s3_read_write_policy, aws_s3_bucket_public_access_block.public_access_block]
+  depends_on = [ aws_s3_bucket_public_access_block.public_access_block]
   bucket = aws_s3_bucket.my_s3bucket.bucket
   policy = <<EOF
 {
