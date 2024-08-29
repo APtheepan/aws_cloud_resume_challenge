@@ -10,11 +10,11 @@ What is Cloud Resume Challenge? - [The Cloud Resume Challenge](https://cloudresu
 
 ## Architecture
 
-![Architecture](./image/Architecture Cloud resume challenge.png)
+![Architecture](/image/Architecture_Cloud_resume_challenge.png)
 
 ## CICD Pipeline Workflow
 
-![Pipeline](./image/CICD Pipeline workflow.png)
+![Pipeline](/image/CICD_Pipeline_workflow.png)
 
 
 **Services Used**:
