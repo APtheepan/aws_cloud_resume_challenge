@@ -1,4 +1,4 @@
-name: "Terraform"
+name: "Infrastucture deployment in Terraform"
 
 on:
   push:
