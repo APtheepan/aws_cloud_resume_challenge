@@ -6,3 +6,16 @@ async function trigger() {
 }
 
 trigger();
+
+
+var typed = new Typed('#typed', {
+    strings: [
+        'Cloud Engineering',
+        'Telecom Engineering',
+        'Integration Engineering',
+        'DevOps Engineering'
+    ],
+    typeSpeed: 50,
+    backSpeed: 50,
+    loop: true
+});
