@@ -1,6 +1,6 @@
 import json
 import boto3
-# import requests
+# import request
 
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('visitorcount')
