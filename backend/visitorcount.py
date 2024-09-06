@@ -20,6 +20,7 @@ def lambda_handler(event, context):
     },
     ReturnValues="UPDATED_NEW"
     )
-    
+
+
 
    
