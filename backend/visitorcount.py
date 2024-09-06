@@ -1,9 +1,18 @@
 import json
 import boto3
+from decimal import Decimal
 # import request
 
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('visitorcount')
+
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Decimal):
+            return float(obj)
+        return json.JSONEncoder.default(self, obj)
+
 
 def lambda_handler(event, context):
 
@@ -20,15 +29,14 @@ def lambda_handler(event, context):
     },
     ReturnValues="UPDATED_NEW"
     )
+    
+    updated_count = response['Attributes']['views']
+    
+    return {
+        'statusCode': 200,
+        'body': json.dumps(updated_count,cls=DecimalEncoder)
+    }
 
-    get_response = table.get_item(
-        Key={
-            'id': '1'
-        }
-    )
-    item = get_response['Item']
-    count = item['views']
-    print(count)
 
 
 
