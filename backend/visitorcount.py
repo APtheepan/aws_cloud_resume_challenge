@@ -7,11 +7,11 @@ dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('visitorcount')
 
 
-class DecimalEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, Decimal):
-            return float(obj)
-        return json.JSONEncoder.default(self, obj)
+#class DecimalEncoder(json.JSONEncoder):
+ #   def default(self, obj):
+  #      if isinstance(obj, Decimal):
+   #         return float(obj)
+   #     return json.JSONEncoder.default(self, obj)
 
 
 def lambda_handler(event, context):
