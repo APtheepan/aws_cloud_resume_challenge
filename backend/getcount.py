@@ -12,7 +12,7 @@ def lambda_handler(event, context):
         }
     )
     item = response['Item']
-    count = item['views']
+    count = flote(item['views'])
     return {
         'statusCode': 200,
         'body': json.dumps(count)
