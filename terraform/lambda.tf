@@ -129,6 +129,6 @@ output "function_url" {
 value = aws_lambda_function_url.lambda_url.function_url 
 }
 
-output "function_url" {
+output "function_getcount_url" {
 value = aws_lambda_function_url.getcount_lambda_url.function_url
 }
