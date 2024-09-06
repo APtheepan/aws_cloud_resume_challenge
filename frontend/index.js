@@ -3,6 +3,12 @@ async function trigger() {
 
     let response =  fetch(apiUrl)
 
+    .then(data => {
+        // Assuming the 'body' is a property in the JSON response
+        console.log(data.body); // Access and process the body
+        document.querySelector('.counter-number').innerHTML = data.body;
+    });
+
 }
 trigger();
 
