@@ -1,6 +1,7 @@
 
-const counter = document.querySelector(".counter-number");
+
 async function updateCounter() {
+    const counter = document.querySelector(".counter-number");
     const apiUrl  = "https://fdqwfxmyvu6ynmngvarzsiadpe0cultb.lambda-url.us-east-1.on.aws/"
     let response = await fetch(apiUrl);
     let data = await response.json();
