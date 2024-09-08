@@ -20,5 +20,5 @@ def lambda_handler(event, context):
     },
     ReturnValues="UPDATED_NEW"
     )
-    return views
-    
+    updated_views = response['Attributes']['views']
+    return updated_views
