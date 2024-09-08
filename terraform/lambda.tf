@@ -93,7 +93,6 @@ resource "aws_lambda_function" "visitorcount" {
   handler          = "visitorcount.lambda_handler"
   #source_code_hash = filebase64sha256("/home/theepan/aws_cloud_resume_challenge/backend/visitorcount.zip")
   runtime          = "python3.8"
-
 }
 
 output "function_url" {
