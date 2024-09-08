@@ -9,7 +9,7 @@ const counter = document.querySelector(".counter-number");
 async function getApi() {
     let response = await fetch(apiUrl);
     let data = await response.json();
-    counter.innerHTML = `👀 Views: ${data}`;
+    counter.innerHTML = `Views: ${data}`;
  
 }
 
