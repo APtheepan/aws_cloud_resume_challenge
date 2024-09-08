@@ -1,11 +1,11 @@
-
+/*
 async function trigger() { 
     const apiUrl  = "https://xd6s657szxuiidb4l3xyruyrsm0ruiip.lambda-url.us-east-1.on.aws/"
     let response =  fetch(apiUrl)
 
 }
 trigger();
-
+*/
 const counter = document.querySelector(".counter-number");
 async function updateCounter() {
     const apiUrl  = "https://xd6s657szxuiidb4l3xyruyrsm0ruiip.lambda-url.us-east-1.on.aws/"
