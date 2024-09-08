@@ -14,7 +14,7 @@ function fetchAndUpdateCounter(url) {
 }
 
 // Example: Call the function with your API URL
-const apiUrl = 'https://fdqwfxmyvu6ynmngvarzsiadpe0cultb.lambda-url.us-east-1.on.aws/'; // Replace with your actual URL
+const apiUrl = 'https://5wxcakkikpts6jbvebmfgj7oui0xixkt.lambda-url.us-east-1.on.aws/'; // Replace with your actual URL
 fetchAndUpdateCounter(apiUrl);
 
 
