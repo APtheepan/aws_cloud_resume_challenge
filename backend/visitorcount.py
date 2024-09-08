@@ -15,16 +15,12 @@ def lambda_handler(event, context):
     ExpressionAttributeNames={
         "#s": "views"
     },
+    views = "#s"
+    print(views),
     ExpressionAttributeValues={
         ':val': 1
     },
     ReturnValues="UPDATED_NEW"
     )
-    get_count = table.get_item(
-        Key={
-            'id': '1'
-        })
-    views = get_count['Item']['views']
-    print(views)
     return views
     
