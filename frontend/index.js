@@ -9,7 +9,7 @@ async function updateCounter() {
         return;
     }
     let data = await response.json();
-    counter.innerHTML = '👀 Views: ${data}';
+    counter.innerHTML = data.counter;
 }
 updateCounter();
 
