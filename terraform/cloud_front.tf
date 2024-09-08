@@ -25,10 +25,6 @@ resource "aws_cloudfront_distribution" "my_cdn_distribution" {
 
   }
 
-  provisioner "local-exec" {
-    command = "aws cloudfront create-invalidation --distribution-id ${self.id} --paths '/*'"
-  }
-
   enabled = true
   aliases = ["teepstech.com"]
   restrictions {
