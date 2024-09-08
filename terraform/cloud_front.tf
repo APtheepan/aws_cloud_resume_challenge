@@ -25,6 +25,10 @@ resource "aws_cloudfront_distribution" "my_cdn_distribution" {
 
   }
 
+  provisioner "local-exec" {
+    command = "aws cloudfront create-invalidation --distribution-id ${self.id} --paths '/*'"
+  }
+
   enabled = true
   aliases = ["teepstech.com"]
   restrictions {
@@ -51,12 +55,7 @@ resource "aws_cloudfront_distribution" "my_cdn_distribution" {
 
 }
 
-resource "aws_cloudfront_distribution_invalidation" "invalidate_cache" {
 
-  distribution_id = aws_cloudfront_distribution.my_cdn_distribution.id
-  paths           = ["/*"]
-  depends_on = [aws_cloudfront_distribution.my_cdn_distribution]
-}
 
 output "cloudfront_distribution_domain_name" {
   value = aws_cloudfront_distribution.my_cdn_distribution.domain_name
