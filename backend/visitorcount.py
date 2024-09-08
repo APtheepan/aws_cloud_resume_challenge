@@ -15,8 +15,6 @@ def lambda_handler(event, context):
     ExpressionAttributeNames={
         "#s": "views"
     },
-    views = "#s"
-    print(views),
     ExpressionAttributeValues={
         ':val': 1
     },
