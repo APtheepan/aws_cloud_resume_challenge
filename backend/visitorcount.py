@@ -33,8 +33,7 @@ def lambda_handler(event, context):
     updated_count = response['Attributes']['views']
     
     return {
-        'statusCode': 200,
-        'body': json.dumps(updated_count,cls=DecimalEncoder)
+        'views': json.dumps(updated_count,cls=DecimalEncoder)
     }
 
 
