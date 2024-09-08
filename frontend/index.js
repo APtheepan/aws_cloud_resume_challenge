@@ -1,14 +1,13 @@
 
-var apiUrl = "https://ppdre6h5gkzqqmonubgbzhi24i0qvfwt.lambda-url.us-east-1.on.aws/"; // Replace with your API Gateway URL
 
 async function trigger() { 
-    var apiUrl = "https://ppdre6h5gkzqqmonubgbzhi24i0qvfwt.lambda-url.us-east-1.on.aws/"
+    const apiUrl  = "https://ppdre6h5gkzqqmonubgbzhi24i0qvfwt.lambda-url.us-east-1.on.aws/"
     let response =  fetch(apiUrl)
 }
 
 const counter = document.querySelector(".counter-number");
 async function getApi() {
-    var apiUrl = "https://ppdre6h5gkzqqmonubgbzhi24i0qvfwt.lambda-url.us-east-1.on.aws/"
+    const apiUrl  = "https://ppdre6h5gkzqqmonubgbzhi24i0qvfwt.lambda-url.us-east-1.on.aws/"
     let response = await fetch(apiUrl);
     let data = await response.json();
     counter.innerHTML = `Views: ${data}`;
