@@ -13,7 +13,7 @@ def lambda_handler(event, context):
     views = views + 1
     print(views)
     response = table.put_item(Item={
-            'id':'0',
+            'id':'1',
             'views': views
     })
 
