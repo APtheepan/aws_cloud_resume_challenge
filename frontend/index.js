@@ -1,21 +1,12 @@
-
-
-function fetchAndUpdateCounter(url) {
-    fetch(url)
-        .then(response => response.json()) // Assuming the response is in JSON format
-        .then(data => {
-            const counterElement = document.querySelector('.counter-number');
-            const number = data.number; // Assuming the number is available in 'number' field of the JSON
-            counterElement.textContent = number;
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
+const counter = document.querySelector(".counter-number");
+async function updateCounter() {
+    let response = await fetch(
+        "https://5wxcakkikpts6jbvebmfgj7oui0xixkt.lambda-url.us-east-1.on.aws/"
+    );
+    let data = await response.json();
+    counter.innerHTML = `👀 Views: ${data}`;
 }
-
-// Example: Call the function with your API URL
-const apiUrl = 'https://5wxcakkikpts6jbvebmfgj7oui0xixkt.lambda-url.us-east-1.on.aws/'; // Replace with your actual URL
-fetchAndUpdateCounter(apiUrl);
+updateCounter();
 
 
 var typed = new Typed('#typed', {
