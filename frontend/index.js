@@ -6,6 +6,16 @@ async function trigger() {
 }
 trigger();
 
+const counter = document.querySelector(".counter-number");
+async function updateCounter() {
+    const apiUrl  = "https://xd6s657szxuiidb4l3xyruyrsm0ruiip.lambda-url.us-east-1.on.aws/"
+    let response = await fetch(apiUrl);
+    let data = await response.json();
+    counter.innerHTML = `👀 Views: ${data}`;
+}
+updateCounter();
+
+
 var typed = new Typed('#typed', {
     strings: [
         'Cloud Engineering',
