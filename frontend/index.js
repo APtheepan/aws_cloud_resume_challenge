@@ -1,5 +1,5 @@
 
-var apiUrl = "https://ezvm5id6yqptwzehm5gmghhnem0trjen.lambda-url.us-east-1.on.aws/"; // Replace with your API Gateway URL
+var apiUrl = "https://ppdre6h5gkzqqmonubgbzhi24i0qvfwt.lambda-url.us-east-1.on.aws/"; // Replace with your API Gateway URL
 
 async function trigger() { 
     let response =  fetch(apiUrl)
