@@ -20,9 +20,11 @@ def lambda_handler(event, context):
     },
     ReturnValues="UPDATED_NEW"
     )
-
-    views = response['Item']['views']
-    views = views + 1
+    get_count = table.get_item(
+        Key={
+            'id': '1'
+        })
+    views = get_count['Item']['views']
     print(views)
     return views
     
