@@ -1,5 +1,4 @@
 
-
 async function trigger() { 
     const apiUrl  = "https://ppdre6h5gkzqqmonubgbzhi24i0qvfwt.lambda-url.us-east-1.on.aws/"
     let response =  fetch(apiUrl)
@@ -16,8 +15,8 @@ var typed = new Typed('#typed', {
     typeSpeed: 50,
     backSpeed: 50,
     loop: true
-});
 
+});
 
 
 
