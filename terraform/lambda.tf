@@ -27,7 +27,7 @@ resource "aws_iam_policy" "lambda_dynamodb_policy" {
     Statement = [
       {
         Effect   = "Allow",
-        Action   = ["dynamodb:UpdateItem", "dynamodb:GetItem"],
+        Action   = ["dynamodb:UpdateItem", "dynamodb:GetItem","dynamodb:PutItem"],
         Resource = "arn:aws:dynamodb:us-east-1:637423423905:table/visitorcount"
       }
     ]
