@@ -22,3 +22,4 @@ def lambda_handler(event, context):
     )
     updated_views = response['Attributes']['views']
     return updated_views
+    
