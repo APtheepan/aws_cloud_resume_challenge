@@ -22,7 +22,3 @@ var typed = new Typed('#typed', {
 
 });
 
-body {
-    zoom: 0.9;
-}
-
