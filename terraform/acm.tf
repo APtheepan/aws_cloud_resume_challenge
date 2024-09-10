@@ -1,5 +1,5 @@
 resource "aws_acm_certificate" "cert" {
-  domain_name       = "teepstech.com"
+  domain_name       = "resume.teepstech.com"
   validation_method = "DNS"
  
 
@@ -10,7 +10,7 @@ resource "aws_acm_certificate" "cert" {
 
 data "aws_acm_certificate" "cert" {
   depends_on = [aws_acm_certificate.cert]
-  domain = "teepstech.com"
+  domain = "resume.teepstech.com"
   statuses = ["ISSUED"]
   
 }

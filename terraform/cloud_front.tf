@@ -26,7 +26,7 @@ resource "aws_cloudfront_distribution" "my_cdn_distribution" {
   }
 
   enabled = true
-  aliases = ["teepstech.com"]
+  aliases = ["resume.teepstech.com"]
   restrictions {
     geo_restriction {
       restriction_type = "none"

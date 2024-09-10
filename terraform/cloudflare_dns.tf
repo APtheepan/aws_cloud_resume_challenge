@@ -27,7 +27,7 @@ resource "cloudflare_record" "certificate_cname" {
 resource "cloudflare_record" "website" {
   depends_on = [aws_cloudfront_distribution.my_cdn_distribution]
   zone_id    = var.zone_id # Replace with your Cloudflare zone ID
-  name       = "@"
+  name       = "resume"
   value      = aws_cloudfront_distribution.my_cdn_distribution.domain_name
   ttl        = 60
   type       = "CNAME"
