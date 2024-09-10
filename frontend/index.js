@@ -1,7 +1,7 @@
 const counter = document.querySelector(".counter-number");
 async function updateCounter() {
     const response = await fetch(
-        "https://dtuzprqqkgkrpu642hn6vbtdrq0xynyh.lambda-url.us-east-1.on.aws/"
+        "https://i3oamfgc3ozfymchipethezhni0meyqp.lambda-url.us-east-1.on.aws/"
     );
     const data = await response.json();
     counter.innerHTML = `Views: ${data}`;
