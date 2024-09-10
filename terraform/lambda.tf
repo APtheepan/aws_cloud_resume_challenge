@@ -82,7 +82,7 @@ resource "aws_lambda_function_url" "lambda_url" {
   authorization_type = "NONE"
   cors {
     allow_origins = ["https://teepstech.com/"]
-    allow_methods = ["GET","POST","PUT","DELETE","OPTIONS"]
+    allow_methods = ["GET","POST","PUT"]
     allow_headers = ["*"]
     max_age       = 3600
   }
