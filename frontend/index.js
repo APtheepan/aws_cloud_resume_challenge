@@ -8,7 +8,6 @@ async function updateCounter() {
 }
 updateCounter();
 
-
 var typed = new Typed('#typed', {
     strings: [
         'Cloud Engineering',
@@ -21,4 +20,6 @@ var typed = new Typed('#typed', {
     loop: true
 
 });
+
+
 
