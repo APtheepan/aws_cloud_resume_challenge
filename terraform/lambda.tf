@@ -81,8 +81,8 @@ resource "aws_lambda_function_url" "lambda_url" {
   function_name      = aws_lambda_function.visitorcount.function_name
   authorization_type = "NONE"
   cors {
-    allow_origins = ["*"]
-    allow_methods = ["GET","POST","PUT"]
+    allow_origins = ["resume.teepstech.com"]
+    allow_methods = ["GET"]
     allow_headers = ["*"]
     max_age       = 3600
   }
