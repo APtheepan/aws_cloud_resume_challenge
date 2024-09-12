@@ -20,11 +20,12 @@ What is Cloud Resume Challenge? - [The Cloud Resume Challenge](https://cloudresu
 **Services Used**:
 
 - Terraform
-- python
+- Python
+- Javascript
 - S3
 - AWS CloudFront
 - Certificate Manager
-- CloudFlare
+- CloudFlare DNS
 - AWS Lambda
 - Linux
 - Dynamo DB
